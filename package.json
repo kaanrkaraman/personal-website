@@ -4,14 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "author": {
-    "url": "",
-    "email": "",
-    "name": ""
+    "url": "https://kaans.land",
+    "email": "kaanrkaraman@proton.me",
+    "name": "R. Kaan Karaman"
   },
   "readme": "README.md",
-  "repository": {
-    "url": ""
-  },
   "scripts": {
     "generate:rss": "ts-node scripts/generate-rss.ts",
     "dev": "vite",
@@ -45,6 +42,7 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"
