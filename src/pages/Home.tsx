@@ -29,7 +29,7 @@ export default function Home() {
 
 			<p className="text-sm leading-relaxed text-gray-700">
 				I also publish technical writing on{ " " }
-				<a href="https://medium.com/@kaanrkaraman" className="underline hover:text-gray-900" target="_blank"
+				<a href="https://medium.com/@rkaankaraman" className="underline hover:text-gray-900" target="_blank"
 				   rel="noopener noreferrer">
 					Medium
 				</a>, where I write about model deployment, deep learning internals, and lessons from building embedded
