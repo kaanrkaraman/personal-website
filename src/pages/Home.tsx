@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
 	return (
 		<section className="max-w-2xl mx-auto mt-10 px-4 space-y-6">
@@ -37,8 +39,8 @@ export default function Home() {
 
 			<p className="text-sm leading-relaxed text-gray-700">
 				For a closer look at the kinds of systems I build, visit the{" "}
-				<a href="/projects" className="underline hover:text-gray-900">projects</a> page. If you're interested in the ideas that influence my work — from research papers to implementation guides — the{" "}
-				<a href="/reading" className="underline hover:text-gray-900">reading list</a> is a curated selection worth exploring.
+        <Link to="/projects" className="underline hover:text-gray-900">projects</Link> page. If you're interested in the ideas that influence my work — from research papers to implementation guides — the{" "}
+				<Link to="/reading" className="underline hover:text-gray-900">reading list</Link> is a curated selection worth exploring.
 			</p>
 		</section>
 	);
