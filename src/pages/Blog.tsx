@@ -6,12 +6,14 @@ type Post = {
 
 const posts: Post[] = [];
 
+const hasPosts = posts.length > 0;
+
 export default function Blog() {
 	return (
-		<section className="max-w-2xl mx-auto mt-10 px-4 space-y-6">
-			<h1 className="text-2xl font-semibold text-gray-900">Blog</h1>
+		<section className="page-section">
+			<h1 className="section-heading">Blog</h1>
 
-			{posts.length > 0 && (
+			{hasPosts && (
 				<p className="text-sm text-gray-700 leading-relaxed">
 					This blog cross-posts my articles originally published on{" "}
 					<a
@@ -25,7 +27,7 @@ export default function Blog() {
 				</p>
 			)}
 
-			{posts.length > 0 ? (
+			{hasPosts ? (
 				<ul className="space-y-3">
 					{posts.map((post) => (
 						<li key={post.slug} className="text-sm">
