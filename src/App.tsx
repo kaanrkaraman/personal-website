@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import ReadingList from "./pages/ReadingList";
 import Projects from "./pages/Projects";
+import PostPage from "./pages/[slug]";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -25,6 +26,8 @@ export default function App() {
             {routes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
             ))}
+            {/* dynamic route for posts */}
+            <Route path="/:slug" element={<PostPage />} />
           </Routes>
         </main>
         <Footer />

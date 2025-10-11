@@ -1,55 +1,64 @@
-type Post = {
-	date: string;
-	title: string;
-	slug: string;
-};
-
-const posts: Post[] = [];
-
-const hasPosts = posts.length > 0;
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getAllPosts } from "../lib/posts";
+import type { Post } from "../lib/posts";
 
 export default function Blog() {
-	return (
-		<section className="page-section">
-			<h1 className="section-heading">Blog</h1>
+  const [posts, setPosts] = useState<Post[]>([]);
 
-			{hasPosts && (
-				<p className="text-sm text-gray-700 leading-relaxed">
-					This blog cross-posts my articles originally published on{" "}
-					<a
-						href="https://medium.com/@kaanrkaraman"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="underline hover:text-gray-900"
-					>
-						Medium
-					</a>. The content here is fully open, archive-stable, and served without third-party analytics or ads.
-				</p>
-			)}
+  useEffect(() => {
+    (async () => setPosts(await getAllPosts()))();
+  }, []);
 
-			{hasPosts ? (
-				<ul className="space-y-3">
-					{posts.map((post) => (
-						<li key={post.slug} className="text-sm">
-							<span className="text-gray-500 mr-4">{post.date}</span>
-							<span className="text-gray-800 hover:underline cursor-pointer">{post.title}</span>
-						</li>
-					))}
-				</ul>
-			) : (
-				<p className="text-sm text-gray-500 italic mt-6">
-					No blog posts here yet — but I’ve written several technical articles on{" "}
-					<a
-						href="https://medium.com/@kaanrkaraman"
-						className="underline hover:text-gray-900"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Medium
-					</a>{" "}
-					covering deep learning, embedded systems, and applied ML. I’ll be cross-posting them here soon, so feel free to check back later.
-				</p>
-			)}
-		</section>
-	);
+  const hasPosts = posts.length > 0;
+
+  return (
+    <section className="page-section">
+      <h1 className="section-heading">Blog</h1>
+
+      {hasPosts && (
+        <p className="text-sm text-gray-700 leading-relaxed mb-6">
+          This blog cross-posts my articles originally published on{" "}
+          <a
+            href="https://medium.com/@rkaankaraman"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-900"
+          >
+            Medium
+          </a>
+          . The content here is open, ad-free, and stable.
+        </p>
+      )}
+
+      {hasPosts ? (
+        <ul className="space-y-3">
+          {posts.map((post) => (
+            <li key={post.slug} className="text-sm">
+              <span className="text-gray-500 mr-4">{post.date}</span>
+              <Link
+                to={`/${post.slug}`}
+                className="text-gray-800 hover:underline"
+              >
+                {post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-sm text-gray-500 italic mt-6">
+          No blog posts yet — check{" "}
+          <a
+            href="https://medium.com/@rkaankaraman"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gray-900"
+          >
+            Medium
+          </a>{" "}
+          for my latest writing.
+        </p>
+      )}
+    </section>
+  );
 }

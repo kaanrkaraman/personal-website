@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 .text-block {
     @apply text-sm leading-relaxed text-gray-700;
@@ -14,4 +15,12 @@
 
 .reading-list {
     @apply list-disc list-inside space-y-3 text-sm text-gray-700;
+}
+
+.prose figure {
+  @apply text-center;
+}
+
+.prose figure figcaption {
+  @apply text-gray-500 italic text-sm mt-2;
 }
