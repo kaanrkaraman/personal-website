@@ -1,7 +1,4 @@
-import { createRequire } from "node:module";
-const require = createRequire(import.meta.url);
-const matter = require("gray-matter");
-
+import fm from "front-matter";
 import { marked } from "marked";
 
 export type Post = {
@@ -22,16 +19,18 @@ export async function getAllPosts(): Promise<Post[]> {
 
   for (const path in postFiles) {
     const raw = await postFiles[path]();
-    const { data, content } = matter(raw);
+    const { attributes, body } = fm<{ 
+      title: string; date: string; slug: string; medium?: string; devto?: string; tags?: string[] 
+    }>(raw);
 
     posts.push({
-      title: data.title,
-      date: data.date,
-      slug: data.slug,
-      medium: data.medium,
-      devto: data.devto,
-      tags: data.tags || [],
-      content,
+      title: attributes.title,
+      date: attributes.date,
+      slug: attributes.slug,
+      medium: attributes.medium,
+      devto: attributes.devto,
+      tags: attributes.tags ?? [],
+      content: body,
     });
   }
 
@@ -42,7 +41,9 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
   const all = await getAllPosts();
   const post = all.find((p) => p.slug === slug);
   if (!post) return undefined;
-  return { ...post, html: marked(post.content) };
+
+  const html = await marked(post.content);
+  return { ...post, html };
 }
 
 export function formatDate(dateString: string): string {

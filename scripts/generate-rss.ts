@@ -1,8 +1,7 @@
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { resolve, join } from "path";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { resolve, join } from "node:path";
 import { globby } from "globby";
-
-import * as matter from "gray-matter";
+import fm from "front-matter";
 
 const DOMAIN = "https://kaans.land";
 const POSTS_DIR = "src/posts";
@@ -19,22 +18,28 @@ const OUTPUT_FILE = join(OUTPUT_DIR, "rss.xml");
   const items = files
     .map((file) => {
       const content = readFileSync(file, "utf-8");
-      const { data } = matter(content);
+      const { attributes } = fm<{
+        title: string;
+        slug: string;
+        date: string;
+        description?: string;
+      }>(content);
 
-      if (!data.title || !data.slug || !data.date) {
+      if (!attributes.title || !attributes.slug || !attributes.date) {
         console.warn(`Missing frontmatter in ${file}`);
         return null;
       }
 
       return `
   <item>
-    <title>${data.title}</title>
-    <link>${DOMAIN}/blog/${data.slug}</link>
-    <pubDate>${new Date(data.date).toUTCString()}</pubDate>
-    <description>${data.description || ""}</description>
+    <title>${attributes.title}</title>
+    <link>${DOMAIN}/blog/${attributes.slug}</link>
+    <pubDate>${new Date(attributes.date).toUTCString()}</pubDate>
+    <description>${attributes.description || ""}</description>
   </item>`;
     })
-    .filter(Boolean);
+    .filter(Boolean)
+    .join("\n");
 
   const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
@@ -42,9 +47,10 @@ const OUTPUT_FILE = join(OUTPUT_DIR, "rss.xml");
   <title>R. Kaan Karaman — Blog</title>
   <link>${DOMAIN}</link>
   <description>Technical writing, machine learning, robotics, and embedded systems.</description>
-  ${items.join("\n")}
+  ${items}
 </channel>
 </rss>`;
 
   writeFileSync(OUTPUT_FILE, rss.trim(), "utf-8");
+  console.log(`✅ RSS feed generated: ${OUTPUT_FILE}`);
 })();
