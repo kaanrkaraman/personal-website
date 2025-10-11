@@ -1,4 +1,7 @@
-import * as matter from "gray-matter";
+import { createRequire } from "node:module";
+const require = createRequire(import.meta.url);
+const matter = require("gray-matter");
+
 import { marked } from "marked";
 
 export type Post = {
@@ -21,15 +24,15 @@ export async function getAllPosts(): Promise<Post[]> {
     const raw = await postFiles[path]();
     const { data, content } = matter(raw);
 
-   posts.push({
-   title: data.title,
-   date: data.date,
-   slug: data.slug,
-   medium: data.medium,
-   devto: data.devto,
-   tags: data.tags || [],
-   content,
-   });
+    posts.push({
+      title: data.title,
+      date: data.date,
+      slug: data.slug,
+      medium: data.medium,
+      devto: data.devto,
+      tags: data.tags || [],
+      content,
+    });
   }
 
   return posts.sort((a, b) => +new Date(b.date) - +new Date(a.date));
