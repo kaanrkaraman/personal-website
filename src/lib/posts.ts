@@ -1,4 +1,4 @@
-import matter from "gray-matter";
+import * as matter from "gray-matter";
 import { marked } from "marked";
 
 export type Post = {
