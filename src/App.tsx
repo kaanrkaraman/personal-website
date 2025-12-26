@@ -6,26 +6,24 @@ import PostPage from "./pages/[slug]";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-const routes = [
-  { path: "/", element: <Home /> },
-];
+const routes = [{ path: "/", element: <Home /> }];
 
 export default function App() {
-  return (
-    <Router>
-      <div className="app-container flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow px-4 py-6 max-w-3xl mx-auto w-full">
-          <Routes>
-            {routes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
-            {/* dynamic route for posts */}
-            <Route path="/:slug" element={<PostPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+	return (
+		<Router>
+			<div className="app-container flex flex-col min-h-screen">
+				<Navbar />
+				<main className="flex-grow px-4 py-6 max-w-3xl mx-auto w-full">
+					<Routes>
+						{routes.map(({ path, element }) => (
+							<Route key={path} path={path} element={element} />
+						))}
+						{/* dynamic route for posts */}
+						<Route path="/:slug" element={<PostPage />} />
+					</Routes>
+				</main>
+				<Footer />
+			</div>
+		</Router>
+	);
 }

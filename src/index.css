@@ -2,25 +2,25 @@
 @plugin "@tailwindcss/typography";
 
 .text-block {
-    @apply text-sm leading-relaxed text-gray-700;
+	@apply text-sm leading-relaxed text-gray-700;
 }
 
 .page-section {
-    @apply max-w-2xl mx-auto mt-10 px-4 space-y-6;
+	@apply max-w-2xl mx-auto mt-10 px-4 space-y-6;
 }
 
 .section-heading {
-    @apply text-2xl font-semibold text-gray-900;
+	@apply text-2xl font-semibold text-gray-900;
 }
 
 .reading-list {
-    @apply list-disc list-inside space-y-3 text-sm text-gray-700;
+	@apply list-disc list-inside space-y-3 text-sm text-gray-700;
 }
 
 .prose figure {
-  @apply text-center;
+	@apply text-center;
 }
 
 .prose figure figcaption {
-  @apply text-gray-500 italic text-sm mt-2;
+	@apply text-gray-500 italic text-sm mt-2;
 }

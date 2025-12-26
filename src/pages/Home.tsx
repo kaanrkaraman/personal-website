@@ -74,9 +74,9 @@ export default function Home() {
 
 	useEffect(() => {
 		if (hash) {
-			const element = document.getElementById(hash.replace('#', ''));
+			const element = document.getElementById(hash.replace("#", ""));
 			if (element) {
-				element.scrollIntoView({ behavior: 'smooth' });
+				element.scrollIntoView({ behavior: "smooth" });
 			}
 		}
 	}, [hash]);
@@ -94,10 +94,20 @@ export default function Home() {
 						<a href="mailto:kaanrkaraman@gmail.com" className="hover:text-gray-900 hover:underline">
 							Email
 						</a>
-						<a href="/CV copy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 hover:underline">
+						<a
+							href="/CV copy.pdf"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-gray-900 hover:underline"
+						>
 							CV
 						</a>
-						<a href="https://scholar.google.com/citations?user=KxUOqCMAAAAJ" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 hover:underline">
+						<a
+							href="https://scholar.google.com/citations?user=KxUOqCMAAAAJ"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-gray-900 hover:underline"
+						>
 							Scholar
 						</a>
 						<a
@@ -112,24 +122,25 @@ export default function Home() {
 				</div>
 
 				<p className="text-block">
-					I&apos;m a machine learning engineer working on autonomous UAV systems. My work focuses on real-time
-					perception and control, sensor fusion, and deployment to embedded platforms like NVIDIA Jetson using
-					ROS 2. Previously, I developed object detection and navigation systems for planetary robotics, and built
-					a convolutional neural network framework from scratch in Python. I prioritize robustness, low-latency
-					inference, and deployable systems.
+					I&apos;m a machine learning engineer working on autonomous UAV systems. My work focuses on
+					real-time perception and control, sensor fusion, and deployment to embedded platforms like
+					NVIDIA Jetson using ROS 2. Previously, I developed object detection and navigation systems
+					for planetary robotics, and built a convolutional neural network framework from scratch in
+					Python. I prioritize robustness, low-latency inference, and deployable systems.
 				</p>
 
 				<p className="text-block">
-					I enjoy exploring the mathematical foundations that underpin machine learning — particularly linear
-					algebra, optimization, probability, and numerical methods. Understanding these systems from first
-					principles has shaped how I approach both model development and implementation.
+					I enjoy exploring the mathematical foundations that underpin machine learning —
+					particularly linear algebra, optimization, probability, and numerical methods.
+					Understanding these systems from first principles has shaped how I approach both model
+					development and implementation.
 				</p>
 
 				<p className="text-block">
-					A regular part of my learning involves reading academic papers and technical articles. I’m especially
-					interested in work at the intersection of deep learning and robotics, including perception pipelines,
-					control under uncertainty, and real-time inference. When I build something, I try to ground it in both
-					theory and practical performance trade-offs.
+					A regular part of my learning involves reading academic papers and technical articles. I’m
+					especially interested in work at the intersection of deep learning and robotics, including
+					perception pipelines, control under uncertainty, and real-time inference. When I build
+					something, I try to ground it in both theory and practical performance trade-offs.
 				</p>
 			</section>
 
@@ -169,7 +180,9 @@ export default function Home() {
 							</span>
 						</a>
 						<p className="mt-1 leading-relaxed">
-							Sedat Bin Vedat, Enes Kutay Yarkan, Meftun Akarsu, <span className="font-medium text-gray-800">Recep Kaan Karaman</span>, Arda Sar, Çağrı Çelikbilek, Savaş Saygılı
+							Sedat Bin Vedat, Enes Kutay Yarkan, Meftun Akarsu,{" "}
+							<span className="font-medium text-gray-800">Recep Kaan Karaman</span>, Arda Sar, Çağrı
+							Çelikbilek, Savaş Saygılı
 							<span className="text-gray-400 mx-2">•</span>
 							2025
 							<span className="text-gray-400 mx-2">•</span>
@@ -192,11 +205,7 @@ export default function Home() {
 								</span>
 							</div>
 							<div className="text-gray-800 mb-2">{exp.title}</div>
-							{exp.description && (
-								<p className="leading-relaxed">
-									{exp.description}
-								</p>
-							)}
+							{exp.description && <p className="leading-relaxed">{exp.description}</p>}
 						</li>
 					))}
 				</ul>
@@ -227,8 +236,6 @@ export default function Home() {
 				</ul>
 			</section>
 
-
-
 			{/* Blog Section */}
 			<section id="blog" className="page-section pt-8">
 				<SectionHeading id="blog" title="Blog" />
@@ -244,8 +251,9 @@ export default function Home() {
 						>
 							Medium
 						</a>
-						, where I write about model deployment, deep learning internals, and lessons from building embedded
-						ML systems. The content here is cross-posted from there (and open source).
+						, where I write about model deployment, deep learning internals, and lessons from
+						building embedded ML systems. The content here is cross-posted from there (and open
+						source).
 					</p>
 				)}
 
@@ -254,10 +262,7 @@ export default function Home() {
 						{posts.map((post) => (
 							<li key={post.slug} className="text-sm">
 								<span className="text-gray-500 mr-4">{post.date}</span>
-								<Link
-									to={`/${post.slug}`}
-									className="text-gray-800 hover:underline"
-								>
+								<Link to={`/${post.slug}`} className="text-gray-800 hover:underline">
 									{post.title}
 								</Link>
 							</li>
@@ -284,27 +289,23 @@ export default function Home() {
 				<SectionHeading id="reading" title="Recommended Reading" />
 
 				<p className="text-block">
-					These are papers, references, and books I revisit often — for their
-					foundational insights, theoretical clarity, or relevance to my work in
-					machine learning, robotics, and systems design.
+					These are papers, references, and books I revisit often — for their foundational insights,
+					theoretical clarity, or relevance to my work in machine learning, robotics, and systems
+					design.
 				</p>
 
 				<p className="text-block">
-					I also spend time listening to and learning from researchers whose work
-					and thinking have shaped the field. I regularly follow talks and writing
-					by <span className="font-medium text-gray-900">Andrej Karpathy</span>{" "}
-					and <span className="font-medium text-gray-900">Ilya Sutskever</span>,
-					and I closely track the research of others like{" "}
-					<span className="font-medium text-gray-900">Geoffrey Hinton</span>,{" "}
-					<span className="font-medium text-gray-900">Yann LeCun</span>,{" "}
+					I also spend time listening to and learning from researchers whose work and thinking have
+					shaped the field. I regularly follow talks and writing by{" "}
+					<span className="font-medium text-gray-900">Andrej Karpathy</span> and{" "}
+					<span className="font-medium text-gray-900">Ilya Sutskever</span>, and I closely track the
+					research of others like <span className="font-medium text-gray-900">Geoffrey Hinton</span>
+					, <span className="font-medium text-gray-900">Yann LeCun</span>,{" "}
 					<span className="font-medium text-gray-900">Jitendra Malik</span>, and{" "}
 					<span className="font-medium text-gray-900">Sergey Levine</span>.
 				</p>
 
-
-				<h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">
-					Foundational Papers
-				</h3>
+				<h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Foundational Papers</h3>
 				<ul className="reading-list">
 					<li>
 						<a
@@ -315,8 +316,8 @@ export default function Home() {
 						>
 							Attention Is All You Need (Vaswani et al., 2017)
 						</a>{" "}
-						— the original Transformer paper, foundational for sequence modeling
-						and modern deep learning.
+						— the original Transformer paper, foundational for sequence modeling and modern deep
+						learning.
 					</li>
 					<li>
 						<a
@@ -327,14 +328,11 @@ export default function Home() {
 						>
 							Adam: A Method for Stochastic Optimization (Kingma & Ba, 2014)
 						</a>{" "}
-						— widely-used optimizer with adaptive moment estimates; practically
-						indispensable.
+						— widely-used optimizer with adaptive moment estimates; practically indispensable.
 					</li>
 				</ul>
 
-				<h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">
-					Practical References
-				</h3>
+				<h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Practical References</h3>
 				<ul className="reading-list">
 					<li>
 						<a
@@ -367,8 +365,7 @@ export default function Home() {
 						>
 							Visual Information Theory (Chris Olah)
 						</a>{" "}
-						— a visual explanation of entropy, KL divergence, and information
-						theory concepts.
+						— a visual explanation of entropy, KL divergence, and information theory concepts.
 					</li>
 					<li>
 						<a
@@ -401,8 +398,7 @@ export default function Home() {
 						>
 							A Recipe for Training Neural Networks (Karpathy)
 						</a>{" "}
-						— a distilled set of practical tips and pitfalls for neural net
-						training.
+						— a distilled set of practical tips and pitfalls for neural net training.
 					</li>
 					<li>
 						<a
@@ -417,45 +413,32 @@ export default function Home() {
 					</li>
 				</ul>
 
-				<h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">
-					Books I Recommend
-				</h3>
+				<h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Books I Recommend</h3>
 				<ul className="reading-list">
 					<li>
-						<span className="font-medium text-gray-900">C++ Primer</span> by
-						Stanley B. Lippman, Josée Lajoie, and Barbara E. Moo — a thorough and
-						well-paced guide to modern C++, ideal for building foundational
-						systems knowledge.
+						<span className="font-medium text-gray-900">C++ Primer</span> by Stanley B. Lippman,
+						Josée Lajoie, and Barbara E. Moo — a thorough and well-paced guide to modern C++, ideal
+						for building foundational systems knowledge.
 					</li>
 					<li>
-						<span className="font-medium text-gray-900">
-							Designing Machine Learning Systems
-						</span>{" "}
-						by Chip Huyen — great for connecting ML theory to real-world system
-						design, especially in production pipelines.
+						<span className="font-medium text-gray-900">Designing Machine Learning Systems</span> by
+						Chip Huyen — great for connecting ML theory to real-world system design, especially in
+						production pipelines.
 					</li>
 					<li>
-						<span className="font-medium text-gray-900">
-							Mathematics for Machine Learning
-						</span>{" "}
-						by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong — covers
-						linear algebra, calculus, probability, and optimization with clean
-						motivation for ML applications.
+						<span className="font-medium text-gray-900">Mathematics for Machine Learning</span> by
+						Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong — covers linear algebra,
+						calculus, probability, and optimization with clean motivation for ML applications.
 					</li>
 					<li>
-						<span className="font-medium text-gray-900">
-							Introduction to Linear Algebra
-						</span>{" "}
-						by Gilbert Strang — a foundational text for understanding vector
-						spaces, matrix operations, and the structure of linear systems; highly
-						recommended for building ML intuition.
+						<span className="font-medium text-gray-900">Introduction to Linear Algebra</span> by
+						Gilbert Strang — a foundational text for understanding vector spaces, matrix operations,
+						and the structure of linear systems; highly recommended for building ML intuition.
 					</li>
 					<li>
-						<span className="font-medium text-gray-900">
-							Neural Networks and Deep Learning
-						</span>{" "}
-						by Michael Nielsen — a clear, code-first introduction to the core
-						concepts of neural networks and deep learning.
+						<span className="font-medium text-gray-900">Neural Networks and Deep Learning</span> by
+						Michael Nielsen — a clear, code-first introduction to the core concepts of neural
+						networks and deep learning.
 					</li>
 				</ul>
 			</section>

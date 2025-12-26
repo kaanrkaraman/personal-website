@@ -66,7 +66,7 @@ So when you take the concept of "breakfast," move it in the direction of "German
 
 This is fundamentally different from old-school translation, which was basically a fancy dictionary lookup. Modern translation systems like Google Translate and DeepL actually understand meaning by mapping all languages into a shared latent space.
 
-Think about it: the concept of "love" exists in every language, even though the word sounds completely different. In English it's "love," in Spanish "amor," in Turkish "aşk,"  in Japanese "愛" (ai), in Arabic "حب" (hubb). These words look and sound nothing alike, but they point to the same human experience.
+Think about it: the concept of "love" exists in every language, even though the word sounds completely different. In English it's "love," in Spanish "amor," in Turkish "aşk," in Japanese "愛" (ai), in Arabic "حب" (hubb). These words look and sound nothing alike, but they point to the same human experience.
 
 In latent space, all these different words get placed near the same location because they represent the same underlying concept. The AI learns that when someone says "I love you" in English or "Te amo" in Spanish, they're expressing the same sentiment. The latent representation captures the meaning itself, stripped away from the specific language it's dressed in.
 
@@ -109,4 +109,3 @@ In a way, latent space is AI's attempt to do what human brains do naturally: com
 Every time you get a perfect song recommendation, or Google Translate nails a tricky phrase, or ChatGPT seems to understand exactly what you're asking remember there's a fascinating invisible map working behind the scenes. You're witnessing latent space in action, quietly organizing the vast landscape of human knowledge into something machines can navigate.
 
 And honestly? That's pretty remarkable.
-
