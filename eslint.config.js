@@ -6,7 +6,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ["dist", ".yarn", ".pnp.*"] },
 
   {
     files: ["**/*.{js,ts,jsx,tsx}"],
@@ -19,6 +19,11 @@ export default tseslint.config(
       react,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
     },
     rules: {
       ...react.configs.recommended.rules,
@@ -36,7 +41,7 @@ export default tseslint.config(
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     languageOptions: {
       parserOptions: {
-        project: ["./tsconfig.json"],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: process.cwd(),
       },
     },

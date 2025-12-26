@@ -12,16 +12,16 @@ export type Post = {
   html?: string;
 };
 
-const postFiles = import.meta.glob("../posts/*.md", { as: "raw" });
+const postFiles = import.meta.glob("../posts/*.md", { query: '?raw', import: 'default' });
 
 export async function getAllPosts(): Promise<Post[]> {
   const posts: Post[] = [];
 
   for (const path in postFiles) {
     const raw = await postFiles[path]();
-    const { attributes, body } = fm<{ 
-      title: string; date: string; slug: string; medium?: string; devto?: string; tags?: string[] 
-    }>(raw);
+    const { attributes, body } = fm<{
+      title: string; date: string; slug: string; medium?: string; devto?: string; tags?: string[]
+    }>(raw as string);
 
     posts.push({
       title: attributes.title,

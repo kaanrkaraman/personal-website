@@ -1,9 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Blog from "./pages/Blog";
-import ReadingList from "./pages/ReadingList";
-import Projects from "./pages/Projects";
 import PostPage from "./pages/[slug]";
 
 import Navbar from "./components/Navbar";
@@ -11,9 +8,6 @@ import Footer from "./components/Footer";
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/blog", element: <Blog /> },
-  { path: "/reading", element: <ReadingList /> },
-  { path: "/projects", element: <Projects /> },
 ];
 
 export default function App() {

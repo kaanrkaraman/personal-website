@@ -11,22 +11,11 @@ export default function Footer() {
           >
             view source ↗
           </a>
-          <a
-            href="https://linkedin.com/in/kaanrkaraman"
-            className="hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            linkedin ↗
-          </a>
-          <a href="mailto:kaanrkaraman@proton.me" className="hover:underline">
-            email
-          </a>
           <a href="/rss.xml" className="hover:underline">
             rss
           </a>
         </nav>
-        <p className="mt-2">© 2025 R. Kaan Karaman — MIT Licensed</p>
+        <p className="mt-2">© 2025 R. Kaan Karaman - MIT Licensed</p>
       </div>
     </footer>
   );
