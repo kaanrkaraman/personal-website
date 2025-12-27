@@ -20,34 +20,47 @@ type Experience = {
 const experience: Experience[] = [
 	{
 		company: "TÜBİTAK",
-		title: "Undergraduate Researcher",
+		title: "Undergraduate Researcher (2247-C STAR)",
 		start: "December 2025",
 		end: "Present",
+		description:
+			"Investigating generative modeling approaches (GANs, diffusion models) for high-fidelity synthetic histopathology image generation. Building reproducible end-to-end experimentation workflows.",
 	},
 	{
 		company: "Hagia Labs",
 		title: "AI Engineer Working Student",
 		start: "October 2025",
 		end: "Present",
+		description:
+			"Developing agentic workflows and RAG systems for internal automation. Improved query accuracy by 38% and reduced manual review times significantly through AI-powered process efficiency.",
+	},
+	{
+		company: "Sema Aviation",
+		title: "Team Lead — AI Engineer",
+		start: "March 2025",
+		end: "December 2025",
+		description:
+			"Led a 30-member interdisciplinary team to design autonomous UAVs. Implemented real-time object tracking (YOLO-Seg + MobileSAM) and fault detection pipelines on NVIDIA Jetson hardware.",
 	},
 ];
 
 const projects: Project[] = [
 	{
+		name: "Python Documentation RAG Assistant",
+		description:
+			"A lightweight RAG assistant for Python docs using semantic chunking, transformer embeddings, and cross-encoder reranking. Achieved 77% top-3 accuracy and visualizes the pipeline via Streamlit.",
+		link: "https://github.com/kaanrkaraman/rag-assistant", // Placeholder link based on project name if known, otherwise user can edit
+	},
+	{
 		name: "Cortex — CNN from Scratch",
 		description:
-			"A convolutional neural network framework built entirely with NumPy. Implements backpropagation, convolution layers, pooling, activations, and optimizers. Achieves 98% accuracy on MNIST without using any deep learning libraries.",
+			"A modular CNN framework built entirely in pure NumPy. Implements backpropagation, convolution, pooling, and optimizers from first principles, achieving 89% accuracy on MNIST.",
 		link: "https://github.com/kaanrkaraman/cortex",
 	},
 	{
 		name: "Autonomous UAV System",
 		description:
-			"Designed and deployed an autonomous flight system using ROS 2, RF-DETR, and Kalman filtering. Integrated perception, control, and sensor fusion pipelines for real-time operation on NVIDIA Jetson hardware.",
-	},
-	{
-		name: "Planetary Rover Perception Stack",
-		description:
-			"Developed rock segmentation and classification models using U-Net and CNNs. Deployed detection and navigation logic on Jetson with OpenCV and PyTorch, achieving 88% accuracy on a custom dataset.",
+			"Real-time perception stack using ROS 2, RF-DETR, and Kalman filtering. Integrated sensor fusion and control pipelines for autonomous flight on embedded NVIDIA Jetson platforms.",
 	},
 ];
 
@@ -89,13 +102,13 @@ export default function Home() {
 			<section className="page-section">
 				<div className="space-y-1 mb-6">
 					<h1 className="section-heading">R. Kaan Karaman</h1>
-					<p className="text-sm text-gray-600">B.Sc. in Computer Science</p>
+					<p className="text-sm text-gray-600">B.Sc. in Computer Engineering</p>
 					<div className="flex space-x-4 text-sm text-gray-500 pt-2">
 						<a href="mailto:kaanrkaraman@gmail.com" className="hover:text-gray-900 hover:underline">
 							Email
 						</a>
 						<a
-							href="/CV copy.pdf"
+							href="/CV.pdf"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="hover:text-gray-900 hover:underline"
@@ -122,25 +135,18 @@ export default function Home() {
 				</div>
 
 				<p className="text-block">
-					I&apos;m a machine learning engineer working on autonomous UAV systems. My work focuses on
-					real-time perception and control, sensor fusion, and deployment to embedded platforms like
-					NVIDIA Jetson using ROS 2. Previously, I developed object detection and navigation systems
-					for planetary robotics, and built a convolutional neural network framework from scratch in
-					Python. I prioritize robustness, low-latency inference, and deployable systems.
+					I am a Computer Engineering undergraduate and researcher specializing in Generative AI and
+					Autonomous Systems. Currently, I serve as an Undergraduate Researcher at{" "}
+					<strong>TÜBİTAK</strong>, investigating high-fidelity histopathology image generation
+					using GANs and diffusion models.
 				</p>
 
 				<p className="text-block">
-					I enjoy exploring the mathematical foundations that underpin machine learning —
-					particularly linear algebra, optimization, probability, and numerical methods.
-					Understanding these systems from first principles has shaped how I approach both model
-					development and implementation.
-				</p>
-
-				<p className="text-block">
-					A regular part of my learning involves reading academic papers and technical articles. I’m
-					especially interested in work at the intersection of deep learning and robotics, including
-					perception pipelines, control under uncertainty, and real-time inference. When I build
-					something, I try to ground it in both theory and practical performance trade-offs.
+					Simultaneously, I work as an AI Engineer at <strong>Hagia Labs</strong>, where I develop
+					agentic workflows and RAG pipelines to automate complex enterprise processes. My
+					background is deeply rooted in robotics and embedded systems; I previously led a 30 member
+					engineering team at <strong>Sema Aviation</strong>, deploying real-time perception stacks
+					on NVIDIA Jetson hardware.
 				</p>
 			</section>
 
@@ -297,12 +303,14 @@ export default function Home() {
 				<p className="text-block">
 					I also spend time listening to and learning from researchers whose work and thinking have
 					shaped the field. I regularly follow talks and writing by{" "}
-					<span className="font-medium text-gray-900">Andrej Karpathy</span> and{" "}
 					<span className="font-medium text-gray-900">Ilya Sutskever</span>, and I closely track the
-					research of others like <span className="font-medium text-gray-900">Geoffrey Hinton</span>
-					, <span className="font-medium text-gray-900">Yann LeCun</span>,{" "}
-					<span className="font-medium text-gray-900">Jitendra Malik</span>, and{" "}
-					<span className="font-medium text-gray-900">Sergey Levine</span>.
+					research of others like{" "}
+					<span className="font-medium text-gray-900">Transformer Explainer</span>,{" "}
+					<span className="font-medium text-gray-900">
+						Neural Networks and Deep Learning (Michael Nielsen)
+					</span>
+					, <span className="font-medium text-gray-900">Chip Huyen&apos;s Blog</span>,{" "}
+					<span className="font-medium text-gray-900">Lilian Weng&apos;s Blog</span>.
 				</p>
 
 				<h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">Foundational Papers</h3>
