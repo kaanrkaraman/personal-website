@@ -296,7 +296,7 @@ export default function Home() {
 
 				<p className="text-block">
 					These are papers, references, and books I revisit often — for their foundational insights,
-					theoretical clarity, or relevance to my work in machine learning, robotics, and systems
+					theoretical clarity, or relevance to my work in AI engineering, robotics, and systems
 					design.
 				</p>
 
