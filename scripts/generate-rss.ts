@@ -46,7 +46,7 @@ const OUTPUT_FILE = join(OUTPUT_DIR, "rss.xml");
 <channel>
   <title>R. Kaan Karaman — Blog</title>
   <link>${DOMAIN}</link>
-  <description>Technical writing, machine learning, robotics, and embedded systems.</description>
+  <description>Technical writing, AI engineering, robotics, and embedded systems.</description>
   ${items}
 </channel>
 </rss>`;
